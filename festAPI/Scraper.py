@@ -16,7 +16,7 @@ class YulchonScraper:
     
     def scrape_and_save(self, url, name, output_path):
         # 이미 학습된 자료가 있는지 체크
-        if os.path.exists(name + "html"):
+        if os.path.exists(output_path + name + ".html"):
             print("File already exists.")
             return "이미 학습되어 있는 파일이 존재함."
         

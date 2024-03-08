@@ -37,6 +37,9 @@ def read_item(q: Q):
 def edu_url(u: U):
     print(u.url)
     response = scraper.scrape_and_save(u.url, u.name, '/home/minsu/rag/docs/')
+    if(response == "이미 학습되어 있는 파일이 존재함."):
+        return {"url" : response}
+    
     result = processor.additional_learning(response)
     return {"url" : result}
 
